@@ -141,7 +141,7 @@
   }
   
   .element-tooltip {
-    @apply animate-in zoom-in-95 duration-100;
+    @apply animate-in zoom-in-95 duration-100 shadow-xl border border-gray-200 dark:border-gray-700 p-0;
   }
   
   .element-details {
@@ -164,6 +164,21 @@
     to {
       opacity: 1;
       transform: translate(-50%, -50%);
+    }
+  }
+  
+  /* Enhanced hover animations */
+  .element-tile:hover {
+    @apply transform transition-all duration-300;
+    animation: tileGlow 2s infinite alternate;
+  }
+  
+  @keyframes tileGlow {
+    0% {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
     }
   }
 }

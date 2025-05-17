@@ -35,9 +35,16 @@ const ElementTile: React.FC<ElementTileProps> = ({ element }) => {
             <div className="text-xs absolute top-1 left-1">{element.atomicNumber}</div>
             <div className="text-lg font-bold">{element.symbol}</div>
             <div className="text-[10px] mt-1 truncate max-w-full">{element.name}</div>
+            
+            {/* Added hover animation pulse effect */}
+            {showDetails && (
+              <div className="absolute inset-0 bg-white/10 dark:bg-black/10 rounded-md animate-pulse z-0"></div>
+            )}
           </div>
         </TooltipTrigger>
-        {element && <ElementDetails element={element} />}
+        <TooltipContent side="right" className="element-tooltip w-80">
+          {element && <ElementDetails element={element} />}
+        </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
