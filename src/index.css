@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 258 90% 66%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -33,22 +34,6 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -61,7 +46,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 258 90% 66%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -79,14 +64,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -97,5 +74,92 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .element-tile {
+    @apply relative flex flex-col items-center justify-center 
+      aspect-square p-1 rounded-md transition-all duration-300
+      hover:z-10 hover:scale-110 hover:shadow-lg cursor-pointer;
+  }
+
+  .alkali-metal {
+    @apply bg-red-400 hover:bg-red-500;
+  }
+
+  .alkaline-earth-metal {
+    @apply bg-orange-300 hover:bg-orange-400;
+  }
+
+  .transition-metal {
+    @apply bg-yellow-200 hover:bg-yellow-300;
+  }
+
+  .post-transition-metal {
+    @apply bg-green-300 hover:bg-green-400;
+  }
+
+  .metalloid {
+    @apply bg-teal-300 hover:bg-teal-400;
+  }
+
+  .nonmetal {
+    @apply bg-blue-300 hover:bg-blue-400;
+  }
+
+  .halogen {
+    @apply bg-indigo-300 hover:bg-indigo-400;
+  }
+
+  .noble-gas {
+    @apply bg-purple-300 hover:bg-purple-400;
+  }
+
+  .lanthanide {
+    @apply bg-pink-300 hover:bg-pink-400;
+  }
+
+  .actinide {
+    @apply bg-rose-300 hover:bg-rose-400;
+  }
+
+  .empty-cell {
+    @apply bg-transparent border-none cursor-default;
+  }
+
+  .gas-state {
+    @apply ring-4 ring-blue-500/50;
+  }
+
+  .liquid-state {
+    @apply ring-4 ring-teal-500/50;
+  }
+
+  .solid-state {
+    @apply ring-0;
+  }
+
+  .element-details {
+    @apply bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl
+      border border-gray-200 dark:border-gray-700 w-full max-w-md
+      fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+      z-50 transition-all duration-300 overflow-auto
+      max-h-[80vh];
+  }
+  
+  .fade-in {
+    @apply animate-[fadeIn_0.3s_ease-out];
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -45%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
   }
 }
