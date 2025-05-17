@@ -81,7 +81,7 @@
   .element-tile {
     @apply relative flex flex-col items-center justify-center 
       aspect-square p-1 rounded-md transition-all duration-300
-      hover:z-10 hover:scale-110 hover:shadow-lg cursor-pointer;
+      hover:z-50 hover:scale-110 hover:shadow-lg cursor-pointer;
   }
 
   .alkali-metal {
@@ -139,7 +139,11 @@
   .solid-state {
     @apply ring-0;
   }
-
+  
+  .element-tooltip {
+    @apply animate-in zoom-in-95 duration-100;
+  }
+  
   .element-details {
     @apply bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl
       border border-gray-200 dark:border-gray-700 w-full max-w-md

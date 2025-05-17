@@ -2,23 +2,13 @@
 import React, { useState, useMemo } from 'react';
 import { Element, tableStructure } from '../data/elements';
 import ElementTile from './ElementTile';
-import ElementDetails from './ElementDetails';
 import FilterControls from './FilterControls';
 import Legend from './Legend';
 
 const PeriodicTable: React.FC = () => {
-  const [selectedElement, setSelectedElement] = useState<Element | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedState, setSelectedState] = useState<string | null>(null);
-  
-  const handleElementClick = (element: Element) => {
-    setSelectedElement(element);
-  };
-  
-  const handleCloseDetails = () => {
-    setSelectedElement(null);
-  };
   
   const handleResetFilters = () => {
     setSearchQuery('');
@@ -93,10 +83,7 @@ const PeriodicTable: React.FC = () => {
                       gridRow: (rowIndex + 2).toString()
                     }}
                   >
-                    <ElementTile 
-                      element={element} 
-                      onClick={handleElementClick} 
-                    />
+                    <ElementTile element={element} />
                   </div>
                 ))}
               </React.Fragment>
@@ -118,13 +105,6 @@ const PeriodicTable: React.FC = () => {
       </div>
       
       <Legend />
-      
-      {selectedElement && (
-        <ElementDetails 
-          element={selectedElement} 
-          onClose={handleCloseDetails} 
-        />
-      )}
     </div>
   );
 };
