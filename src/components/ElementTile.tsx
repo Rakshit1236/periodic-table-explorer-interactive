@@ -30,7 +30,7 @@ const ElementTile: React.FC<ElementTileProps> = ({ element }) => {
           <div 
             className={`element-tile ${categoryClass} ${stateClass}`}
             onMouseEnter={() => setShowDetails(true)}
-            onMouseLeave={() => setShowDetails(false)}
+            onMouseLeave={() => setShowDetails(true)}
           >
             <div className="text-xs absolute top-1 left-1">{element.atomicNumber}</div>
             <div className="text-lg font-bold">{element.symbol}</div>
