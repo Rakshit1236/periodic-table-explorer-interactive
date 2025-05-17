@@ -125,7 +125,7 @@
   }
 
   .empty-cell {
-    @apply bg-transparent border-none cursor-default;
+    @apply bg-transparent border-none cursor-default hover:scale-100 hover:shadow-none;
   }
 
   .gas-state {
